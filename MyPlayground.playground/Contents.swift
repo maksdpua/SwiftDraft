@@ -43,11 +43,7 @@ apples2 = apples2 + 5
 
 print("\(apples2)")
 
-//strings
-
-var str1 = " "
-
-str1.isEmpty
+//# MARK: - Operations
 
 var sum = 5
 sum = sum + 1
@@ -57,11 +53,25 @@ sum++
 sum
 ++sum
 
-//string
+//strings
+
+var str1 = "String"
+
+str1.isEmpty
+
 
 for c in "09".characters {
     print(c)
 }
+
+let char1 : Character = "x"
+
+str1.append(char1)
+
+(str1 as NSString).length
+
+NSString(string: str1)
+
 
 
 
