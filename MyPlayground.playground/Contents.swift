@@ -70,7 +70,18 @@ str1.append(char1)
 
 (str1 as NSString).length
 
-NSString(string: str1)
+var someStr = NSString(string: str1)
+
+var secStr : NSString = someStr
+
+let preStr : NSString = "str"
+
+someStr = "45"
+
+secStr
+
+preStr.hasPrefix("st")
+
 
 
 
