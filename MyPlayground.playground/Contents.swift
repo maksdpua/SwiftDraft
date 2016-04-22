@@ -49,6 +49,20 @@ var str1 = " "
 
 str1.isEmpty
 
+var sum = 5
+sum = sum + 1
+sum += 1
+
+sum++
+sum
+++sum
+
+//string
+
+for c in "09".characters {
+    print(c)
+}
+
 
 
 
