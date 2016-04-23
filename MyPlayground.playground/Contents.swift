@@ -49,9 +49,11 @@ var sum = 5
 sum = sum + 1
 sum += 1
 
-sum++
+sum += 1
 sum
-++sum
+sum += 1
+
+
 
 //stringmark
 
@@ -82,6 +84,8 @@ secStr
 
 preStr.hasPrefix("st")
 
+
+
 //arraymark
 
 var array = ["a", "b"]
@@ -91,6 +95,26 @@ array.append("c")
 array[0] = "A1"
 
 array
+
+array[0..<2] = ["0"]
+
+array = ["a", "b", "c", "d", "e"]
+
+array.insert("-", atIndex: 3)
+
+array.removeAtIndex(3)
+array
+
+let test = [Int](count: 3, repeatedValue: 100)
+
+let money = [100, 1, 5, 20, 1, 50, 1, 1, 20]
+
+for i in 0 ..< 9 {
+    print("i = \(i)")
+}
+
+
+
 
 
 
