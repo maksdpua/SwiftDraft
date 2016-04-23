@@ -53,7 +53,7 @@ sum++
 sum
 ++sum
 
-//strings
+//stringmark
 
 var str1 = "String"
 
@@ -81,6 +81,21 @@ someStr = "45"
 secStr
 
 preStr.hasPrefix("st")
+
+//arraymark
+
+var array = ["a", "b"]
+
+array.append("c")
+
+array[0] = "A1"
+
+array
+
+
+
+
+
 
 
 
