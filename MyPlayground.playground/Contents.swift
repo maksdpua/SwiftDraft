@@ -109,9 +109,29 @@ let test = [Int](count: 3, repeatedValue: 100)
 
 let money = [100, 1, 5, 20, 1, 50, 1, 1, 20]
 
-for i in 0 ..< 9 {
-    print("i = \(i)")
+var summa = 0
+
+//for i in money {
+//    print("i = \(i)")
+//    summa += i
+//}
+//summa
+
+//for i in 0..<money.count {
+//    print("i = \(i)")
+//    summa += money[i]
+//}
+
+
+
+for (index, value) in money.enumerate() {
+    print("index = \(index) value = \(value)")
+    summa += value
 }
+
+summa
+
+
 
 
 
