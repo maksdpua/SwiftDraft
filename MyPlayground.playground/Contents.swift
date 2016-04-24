@@ -133,6 +133,35 @@ summa
 
 
 
+//dictionarymark
+
+var dict = ["машина" : "car", "мужик" : "man"]
+
+dict["мужик"]
+
+dict.count
+dict.isEmpty
+
+var dict3 = [String :String]()
+
+dict3.count
+dict3.isEmpty
+
+//dict3["комп"] = "mac"
+
+dict.keys
+dict.values
+dict.updateValue("mac", forKey: "комп")
+
+if let com = dict["комп"] {
+    print("\(com)")
+}
+
+let comp = dict["комп"]
+
+
+
+
 
 
 
