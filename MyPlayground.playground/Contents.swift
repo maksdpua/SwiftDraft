@@ -158,20 +158,87 @@ if let com = dict["комп"] {
 }
 
 let comp = dict["комп"]
+dict.removeValueForKey("мужик")
+dict
+
+//dict = [:]
+//
+//dict
+
+for (key, value) in dict {
+    print("key = \(key), value = \(value)")
+}
 
 
+//Switchmark
+
+var someAge = 66
+
+mainLoop: for _ in 0...1000 {
+    
+    for i in 0..<20 {
+        if i == 10 {
+            break mainLoop
+        }
+//        print(i)
+    }
+}
+
+switch someAge {
+    case 0...16: print("школота"); fallthrough
+    case 17...25: print("other")
+    case 51, 55, 56: print("done")
+    default: break
+}
+
+var name = "Max"
+
+switch name {
+    case "Max" where someAge < 50:
+    print("hi buddy")
+    
+case "Max" where someAge >= 50:
+    print("I don't know you")
+    default: break
+}
+
+var optional : Int? = 5
+
+if let a = optional {
+    print("\(a) != nil")
+}
+
+let tuple = (name, someAge)
+
+switch tuple {
+case ("Max", 60): print("Hi max 60")
+case ("Max", 59): print("Hi max 59")
+    
+case (_, let number) where number >= 65 && number <= 70:
+    print("value binding")
+    
+case ("Max", _): print("Hi, Max")
+default: break
+}
 
 
+let point = (5,-5)
+
+switch point {
+case let (x,y) where x == y:
+    print("x == y")
+case let (_,y) where y<0:
+    print("y<0")
+default: break
+}
 
 
-
-
-
-
-
-
-
-
+let switchArray : [CustomStringConvertible] = [5, 5.4, Float(5.4)]
+switch switchArray[2] {
+case let a as Int: print("Integer")
+case _ as Float: print("Float")
+default: break
+}
 
 
 
