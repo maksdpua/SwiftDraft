@@ -266,9 +266,75 @@ a.total
 
 
 
+func calculateMoney(inSequence range: Int...) -> Int {
+    var sum = 0
+    for value in range {
+        sum += value
+    }
+    return sum
+}
+
+calculateMoney(inSequence: 5,5,10,2,3,4,3,23,34,1,1)
+
+func sayHi() {
+    print("Say hi")
+}
+
+sayHi()
+sayHi()
+sayHi()
+sayHi()
 
 
+let hi = sayHi
+hi
+hi
 
+func sayPhrase(pharase: String) -> Int? {
+    print(pharase)
+    return nil
+}
+
+sayPhrase("aaaa")
+
+let phrase = sayPhrase
+
+phrase("bbbb")
+
+
+func doSomething(whatToDo:()->())  {
+    whatToDo()
+}
+
+func whatToDo() -> () -> () {
+    func printSomething() {
+        print("Hellow world!!")
+    }
+    return printSomething
+}
+
+doSomething(sayHi)
+
+let iShouldDoThis = whatToDo()
+
+iShouldDoThis
+
+func addTwoInts(a: Int, b: Int) -> Int {
+    return a + b
+}
+func multiplyTwoInts(a: Int, b: Int) -> Int {
+    return a * b
+}
+
+var mathFunction: (Int, Int) -> Int = addTwoInts
+
+print("Result: \(mathFunction(2, 3))")
+
+func printMathResult(mathFunction: (Int, Int) -> Int, a: Int, b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(addTwoInts(3, 5))
+// напечатает "Result: 8"
 
 
 
