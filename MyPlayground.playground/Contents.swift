@@ -240,5 +240,35 @@ case _ as Float: print("Float")
 default: break
 }
 
+//functionmark
+
+func calculateMoney(inWallet wallet: [Int], withType type: Int? = nil) -> (total: Int, count: Int) {
+   var sum = 0
+   var count = 0
+    for value in wallet {
+        if (type == nil) || (value == type!) {
+            sum += value
+            count += 1
+        }
+    }
+    
+    print("sum = \(sum)")
+    
+    return (sum, count)
+}
+
+let wallet = [100, 5, 1, 5, 5, 20, 50, 100, 1, 1]
+
+
+let a = calculateMoney(inWallet: wallet, withType: 100)
+a.count
+a.total
+
+
+
+
+
+
+
 
 
