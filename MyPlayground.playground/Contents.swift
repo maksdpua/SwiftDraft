@@ -333,8 +333,19 @@ print("Result: \(mathFunction(2, 3))")
 func printMathResult(mathFunction: (Int, Int) -> Int, a: Int, b: Int) {
     print("Result: \(mathFunction(a, b))")
 }
-printMathResult(addTwoInts(3, 5))
+//printMathResult(addTwoInts(3, 5))
 // напечатает "Result: 8"
 
+func arithmeticMean(numbers: Double...) -> Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5)
+// возвратит 3.0, т. е. среднее арифметическое этих пяти чисел
+arithmeticMean(3, 8.25, 18.75)
+// возвратит 10.0, т. е. среднее арифметическое этих трех чисел
 
 
