@@ -351,6 +351,7 @@ arithmeticMean(3, 8.25, 18.75)
 
 
 //clougersmark
+// MARK : clougers
 
 
 let numbers = [4, 3, 12, 7, 6, 3, 56, 7, 8, 9, 10]
