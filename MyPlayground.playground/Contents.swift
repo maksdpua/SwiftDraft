@@ -349,3 +349,30 @@ arithmeticMean(3, 8.25, 18.75)
 // возвратит 10.0, т. е. среднее арифметическое этих трех чисел
 
 
+
+//clougersmark
+
+
+let numbers = [4, 3, 12, 7, 6, 3, 56, 7, 8, 9, 10]
+
+func filterArray(array: [Int], f: (Int) -> Bool) -> [Int] {
+    
+    var filtered = [Int]()
+    
+    for i in array {
+        if f(i) {
+            filtered.append(i)
+        }
+    }
+    return filtered
+}
+
+
+//func compare(i: Int) -> Bool {
+//    return i % 2 == 0
+//}
+
+filterArray(numbers, f: {(i: Int) -> Bool in
+    
+    return i % 2 == 0
+})
