@@ -354,7 +354,7 @@ arithmeticMean(3, 8.25, 18.75)
 // MARK: clougers
 
 
-let numbers = [4, 3, 12, 7, 6, 3, 56, 7, 8, 9, 10]
+let numbers = [4, 3, 12, 7, 6, 3, 56, 7, 8, 9, 10, 1, 23, 123, 2]
 
 func filterArray(array: [Int], f: (Int) -> Bool) -> [Int] {
     
@@ -373,12 +373,55 @@ func filterArray(array: [Int], f: (Int) -> Bool) -> [Int] {
 //    return i % 2 == 0
 //}
 
+let a5 =
 filterArray(numbers, f: {(i: Int) -> Bool in
     
     return i % 2 == 0
 })
+let a1 =
+filterArray(numbers,  f: {$0 % 3 == 0})
 
-filterArray(numbers, f: {(i -> Bool in
+let a6 =
+    filterArray(numbers) {
+        $0 % 2 == 0
+}
+
+let array1 = [1, 2, 3]
+
+var countArray = 0
+
+filterArray(numbers) { value in
     
-    return i % 2 == 0
-})
+    for include in array1 {
+        countArray += 1
+        if include == value {
+            return true
+        }
+    }
+    return false
+    
+}
+
+
+countArray
+
+
+countArray = 0
+
+var dictionary = [Int:Bool]()
+for value in array1 {
+    dictionary[value] = true
+}
+
+let a67 =
+dictionary
+
+let a7 =
+    filterArray(numbers) { value in
+        countArray += 1
+        return dictionary[value] != nil
+}
+
+countArray
+
+
