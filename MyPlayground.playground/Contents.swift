@@ -428,22 +428,26 @@ countArray
 
 enum Action {
     case Walk(meters: Int)
-    case Run(meters: Int, speed: Int)
+    case Run(meters: Int, speed: Float)
     case Stop
     case Turn()
 }
 
-var action = Action.Run(meters: 20, speed: 15)
+var action = Action.Run(meters: 20, speed: 15.0)
 
 action = .Stop
 
-action = .Walk(meters: 10)
+action = .Walk(meters: 100)
+
+action = .Run(meters: 5, speed: 10)
 
 switch action {
     
     case .Stop: print("Stop")
-    case .Walk(let meters):
-    print("Walk \(meters) meters")
+//    case .Walk(let meters): print("Walk \(meters) meters")
+    case .Walk(let meters) where meters < 100: print("short walk")
+    case .Walk(let meters): print("long walk")
+    case .Run(let meters, let s): print("run \(meters) meters with speed \(s)")
     default: break
 }
 
