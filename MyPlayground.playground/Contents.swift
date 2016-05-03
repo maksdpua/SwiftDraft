@@ -432,12 +432,12 @@ enum Action {
     case Walk(meters: Int)
     case Run(meters: Int, speed: Float)
     case Stop
-    case Turn(direction: Direction)
+    case Turn(direction: Action.Direction)
     
-//    enum Direction {
-//        case Left
-//        case Right
-//    }
+    enum Direction {
+        case Left
+        case Right
+    }
 }
 
 enum Direction : String {
@@ -453,15 +453,12 @@ action = .Walk(meters: 100)
 
 action = .Run(meters: 5, speed: 10)
 
-//action = .Turn(direction: .Left)
+action = .Turn(direction: .Left)
 
-//action = .Turn(direction: Action.Direction.Left)
+action = .Turn(direction: Action.Direction.Left)
 
 //action = .Turn(direction: "Left") <-- wrong!
 
-var direction = Direction(rawValue: "Right!")!
-
-action = .Turn(direction: direction)
 
 switch action {
     
@@ -475,7 +472,7 @@ switch action {
     
     case .Turn(let dir) where dir == .Left: print("Turn left")
     
-    case .Turn(let dir) where dir == .Right: print("True right")
+    case .Turn(let dir) where dir == .Right: print("Trun right")
     
     default: break
 }
