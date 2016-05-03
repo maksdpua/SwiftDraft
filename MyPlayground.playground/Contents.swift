@@ -426,11 +426,23 @@ countArray
 
 //enummark
 
+
+
 enum Action {
     case Walk(meters: Int)
     case Run(meters: Int, speed: Float)
     case Stop
-    case Turn()
+    case Turn(direction: Direction)
+    
+//    enum Direction {
+//        case Left
+//        case Right
+//    }
+}
+
+enum Direction : String {
+    case Left = "Left!"
+    case RIght = "Right!"
 }
 
 var action = Action.Run(meters: 20, speed: 15.0)
@@ -441,15 +453,34 @@ action = .Walk(meters: 100)
 
 action = .Run(meters: 5, speed: 10)
 
+//action = .Turn(direction: .Left)
+
+//action = .Turn(direction: Action.Direction.Left)
+
+//action = .Turn(direction: "Left") <-- wrong!
+
+var direction = Direction(rawValue: "Right!")!
+
+action = .Turn(direction: direction)
+
 switch action {
     
     case .Stop: print("Stop")
 //    case .Walk(let meters): print("Walk \(meters) meters")
     case .Walk(let meters) where meters < 100: print("short walk")
+    
     case .Walk(let meters): print("long walk")
+    
     case .Run(let meters, let s): print("run \(meters) meters with speed \(s)")
+    
+    case .Turn(let dir) where dir == .Left: print("Turn left")
+    
+    case .Turn(let dir) where dir == .Right: print("True right")
+    
     default: break
 }
+
+print(Direction.Left.rawValue)
 
 
 
